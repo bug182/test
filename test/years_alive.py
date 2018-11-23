@@ -6,10 +6,10 @@ years = []
 years_alive = []
 year_s = input('Give a year farther than your birth year: ')
 def cls():
-	os.system('cls')
+	os.system('clear')
 
 def add_years(s_year):
-	print('Just fetching every year from '+ year_s + ' to the current year')
+	print('Just fetching every year from '+ str(year_s) + ' to the current year')
 	start_year = int(year_s)
 	for year in range(start_year, current_date.year + 1):
 		time.sleep(.15)
@@ -21,9 +21,9 @@ def add_years(s_year):
 
 add_years(year_s)
 
-'''
+
 birth = input('What year were you born? ')
-print('So you were born in ' + birth + ', dope!')
+print('So you were born in ' + str(birth) + ', dope!')
 
 def calculate(birth_y):
 	i = -1
@@ -31,9 +31,8 @@ def calculate(birth_y):
 		i +=1
 		years_alive.append(from_birth)
 	return i
-	
-	
+
+
 num_of_years = calculate(int(birth))
 print('You have been alive for ' + str(num_of_years) + ' years!')
 print('The years you have been alive are the following: ' + str(years_alive))
-'''
