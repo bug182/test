@@ -14,3 +14,10 @@ elif add_thing.lower() == 'n':
 	print('Sorry, I am having trouble proccessing your request. Pleae wait for next update')
 else:
 	print("Please answer with a 'y' or a 'n'")
+
+class lst(object):
+	def __init__(self):
+		self.list = []
+		self.user = []
+
+	def make_lst(self, )
