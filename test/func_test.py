@@ -1,3 +1,5 @@
+'''
+#testing 'or' with 'if' statements
 answer = input('y/n: ')
 
 def test(a):
@@ -8,3 +10,12 @@ def test(a):
 
 
 test(answer)
+#testing web usement
+
+import requests
+from bs4 import BeautifulSoup
+
+r = requests.get('http://www.tamswithmark.com/shows/anything-goes-beaumont-1987/')
+soup = BeautifulSoup(r.content, 'html.parser')
+rows = soup.findAll('tr', {"class": "upcoming_performance"})
+'''
