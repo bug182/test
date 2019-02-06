@@ -1,13 +1,36 @@
-from splinter import Browser
+import time
+from datetime import datetime
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
-browser = Browser() # defaults to firefox
-browser.visit('http://google.com')
-browser.fill('q', 'splinter - python acceptance testing for web applications')
-browser.find_by_name('btnG').click()
+class automation:
+    def __init__(self):
+        self.get_spot()
 
-if browser.is_text_present('splinter.readthedocs.io'):
-    print "Yes, the official website was found!"
-else:
-    print "No, it wasn't found... We need to improve our SEO techniques"
+    def run_in_day(self):
+        print('Timer started')
+        time.sleep(3600 * 24)
+        print('Time is up, getting next day spot :)')
+        get_spot()
 
-browser.quit()
+    def get_spot(self):
+        now = datetime.now()
+        date_select = str(now.day + 1)
+        driver = webdriver.Firefox()
+        driver.get("https://mypass.sixflags.com/reservations.aspx?rt=PARKING")
+        elem = driver.find_element_by_id("ctl00_BodyContent_fldLoginEmail")
+        elem.send_keys("kylerkibler182@gmail.com")
+        elem = driver.find_element_by_id("ctl00_BodyContent_fldLoginPassword")
+        elem.send_keys("4Mysixflags182", Keys.ENTER)
+        time.sleep(4)
+        button = driver.find_element_by_id("BodyContent_cmdSelectAPark")
+        button.click()
+        time.sleep(2)
+        button = driver.find_element_by_link_text(date_select)
+        button.click()
+        button = driver.find_element_by_id("BodyContent_cmdSelectDate")
+        #button.click()
+        driver.close()
+        self.run_in_day()
+
+automation()
