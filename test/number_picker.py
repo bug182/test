@@ -7,7 +7,9 @@ while True:
     try:
         number = int(input("Highest numeber: "))
     except NameError:
-        print("enter a number")
+        print("Enter a number")
+    except ValueError:
+        print("Enter a number")
     else:
         rand_num(number)
         break
